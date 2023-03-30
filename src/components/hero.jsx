@@ -17,7 +17,7 @@ const Hero = () => {
       <Header />
       <div className="w-full h-screen relative ">
         <div className="relative h-screen text-center flex flex-col justify-center items-center">
-          <button className="relative bg-orange-600 hover:bg-orange-500 px-4 py-1 rounded-2xl text-white h-8 w-28 font-black text-xs cursor-pointer">
+          <button className="relative bg-orange-600 hover:bg-orange-500 px-2 py-1 rounded-2xl text-white h-8 w-28 font-black text-xs uppercase cursor-pointer">
             Real Estate
           </button>
           <h1 className="font-normal text-7xl text-center mt-40 text-white ">

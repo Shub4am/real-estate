@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div className="">
       <div className="flex justify-center items-center">
-        <button className="relative mt-24 bg-green-200  hover:bg-green-600 px-4 py-1 rounded-2xl text-green-500 hover:text-white h-8 w-28 font-black text-xs cursor-pointer ">
+        <button className="relative mt-24 bg-green-200  hover:bg-green-600 px-4 py-1 rounded-2xl text-green-500 hover:text-white h-8 w-28 font-black text-xs uppercase cursor-pointer ">
           Our Story
         </button>
       </div>
@@ -33,7 +33,7 @@ const About = () => {
         </p>
       </div>
 
-      <div className="flex justify-center items-center mt-[50px]">
+      <div className="flex justify-center items-center mt-[50px] ml-[28px]">
         <div className="bg-white py-35 px-10 h-[160px] w-[350px] mr-[30px] flex flex-col justify-center items-center rounded-[10px] shadow-md">
           <p className="font-medium text-3xl leading-[50px] text-[#4D5E80] capitalize">
             15 years
