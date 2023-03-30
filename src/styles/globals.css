@@ -33,8 +33,7 @@ body {
   overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
-  /* background-color: #6b7a99; */
-  /* background-color: #f7f8fa; */
+  background-color: #f7f8fa;
 }
 
 a {
