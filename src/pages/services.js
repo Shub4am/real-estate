@@ -8,7 +8,7 @@ import parkingIcon from '../assets/icons/parking.png';
 
 const Services = () => {
   return (
-    <div>
+    <div className="relative p-4 mb-4">
       <div className="flex justify-center items-center">
         <button className="relative mt-24 bg-blue-200 hover:bg-blue-600 px-4 py-1 rounded-2xl text-blue-500 hover:text-white h-8 w-28 font-black text-xs uppercase cursor-pointer ">
           services
@@ -19,7 +19,7 @@ const Services = () => {
           <p className="text-10xl text-blue-700 opacity-5 font-black text-center z-0 absolute top-0 left-0 w-full uppercase">
             services
           </p>
-          <p className="text-4xl text-blue-900 font-bold text-center z-20 relative mt-16">
+          <p className="text-4xl text-blue-900 font-bold text-center z-20 relative mt-14">
             Services for Maximum Efficiency
           </p>
         </div>

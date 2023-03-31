@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="">
+    <div className="relative p-4 mb-4">
       <div className="flex justify-center items-center">
         <button className="relative mt-24 bg-green-200  hover:bg-green-600 px-4 py-1 rounded-2xl text-green-500 hover:text-white h-8 w-28 font-black text-xs uppercase cursor-pointer ">
           Our Story
