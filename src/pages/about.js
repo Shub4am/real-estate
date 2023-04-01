@@ -21,10 +21,7 @@ const About = () => {
       </div>
 
       <div className="relative justify-center items-center">
-        <p
-          className="font-medium text-base text-center mt-20"
-          style={{ color: '#7D8FB3' }}
-        >
+        <p className="font-medium text-base text-center mt-20  text-[#7D8FB3]">
           Real estate is &quot;property consisting of land and the buildings on
           it, along with its natural resources such as crops,
           <br /> minerals or water, immovable property of this nature; an

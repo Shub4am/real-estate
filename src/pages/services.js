@@ -26,10 +26,7 @@ const Services = () => {
       </div>
 
       <div className="relative justify-center items-center">
-        <p
-          className="font-medium text-base text-center mt-20"
-          style={{ color: '#7D8FB3' }}
-        >
+        <p className="font-medium text-base text-center mt-20  text-[#7D8FB3]">
           We have developed a unique space where you can work and create. We
           thought of everything to the smallest
           <br /> detail. You will be able to conduct your business, conduct
