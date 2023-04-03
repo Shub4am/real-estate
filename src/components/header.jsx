@@ -7,6 +7,7 @@ import searchIcon from '../../src/assets/icons/search.png';
 const Header = () => {
   return (
     <div className="w-full h-20 shadow-xl flex justify-between items-center relative">
+      {/*navbar always on top: className="w-full h-20 shadow-xl flex justify-between items-center fixed top-0 left-0 right-0 bg-[#040508a4] z-50 " */}
       {/* Menu + Name */}
 
       <div className="ml-40">
