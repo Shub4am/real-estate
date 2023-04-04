@@ -7,6 +7,12 @@ import mailIcon from '../assets/icons/mail.png';
 import Header from './header';
 
 const Hero = () => {
+  const showMoreBtn = () => {
+    document
+      .getElementById('about-container')
+      .scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section
       className="flex flex-col w-full h-screen bg-center bg-cover bg-no-repeat rounded-b-4xl"
@@ -57,7 +63,10 @@ const Hero = () => {
           </div>
           {/* Show more button  */}
           <div className="  absolute bottom-8 w-full text-center ">
-            <button className=" text-blue-900 text-xl capitalize shadow-lg bg-white hover:bg-orange-500 hover:text-white px-4 py-1 rounded-3xl h-14 w-36">
+            <button
+              onClick={showMoreBtn}
+              className=" text-blue-900 text-xl capitalize shadow-lg bg-white hover:bg-orange-500 hover:text-white px-4 py-1 rounded-3xl h-14 w-36"
+            >
               show more
             </button>
           </div>

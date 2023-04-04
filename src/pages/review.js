@@ -4,14 +4,17 @@ import React from 'react';
 import userImg from '../assets/images/user1.png';
 import userImg1 from '../assets/images/user2.png';
 import userImg2 from '../assets/images/user3.png';
+import Link from 'next/link';
 
 const Review = () => {
   return (
     <div className="relative p-4 mb-4">
       <div className="flex justify-center items-center  p-3">
-        <button className="mt-[90px] mb-4 bg-blue-200 hover:bg-blue-600 px-4 py-1 rounded-2xl text-blue-500 hover:text-white h-8 w-28 font-black text-xs uppercase cursor-pointer ">
-          reviews
-        </button>
+        <Link href="/">
+          <button className="mt-[90px] mb-4 bg-blue-200 hover:bg-blue-600 px-4 py-1 rounded-2xl text-blue-500 hover:text-white h-8 w-28 font-black text-xs uppercase cursor-pointer ">
+            reviews
+          </button>
+        </Link>
       </div>
       <div className="relative ">
         <div className="flex flex-col justify-center items-center">

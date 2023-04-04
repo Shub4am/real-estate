@@ -10,14 +10,17 @@ import instaImg6 from '../assets/images/insta6.png';
 import instaImg7 from '../assets/images/insta7.png';
 import instaImg8 from '../assets/images/insta8.png';
 import instaIcon from '../assets/icons/instaIcon.png';
+import Link from 'next/link';
 
 const Insta = () => {
   return (
     <div className="relative p-4 mb-4">
       <div className="flex justify-center items-center  p-3">
-        <button className="mt-[90px] mb-4 bg-orange-200 hover:bg-orange-600 px-4 py-1 rounded-2xl text-orange-500 hover:text-white h-8 w-28 font-black text-xs uppercase cursor-pointer ">
-          instagram
-        </button>
+        <Link href="/">
+          <button className="mt-[90px] mb-4 bg-orange-200 hover:bg-orange-600 px-4 py-1 rounded-2xl text-orange-500 hover:text-white h-8 w-28 font-black text-xs uppercase cursor-pointer ">
+            instagram
+          </button>
+        </Link>
       </div>
       <div className="relative ">
         <div className="flex flex-col justify-center items-center">

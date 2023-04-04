@@ -4,6 +4,7 @@ import usernameIcon from '../assets/icons/Icon.png';
 import callIcon from '../assets/icons/callIcon.png';
 import emailIcon from '../assets/icons/email.png';
 import messageIcon from '../assets/icons/message.png';
+import Link from 'next/link';
 
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -43,9 +44,11 @@ const Form = () => {
   return (
     <div className="relative p-4 mb-4">
       <div className="flex justify-center items-center  p-3">
-        <button className="mt-[90px] mb-4 bg-orange-200 hover:bg-orange-600 px-4 py-1 rounded-2xl text-orange-500 hover:text-white h-8 w-28 font-black text-xs uppercase cursor-pointer ">
-          contacts
-        </button>
+        <Link href="/">
+          <button className="mt-[90px] mb-4 bg-orange-200 hover:bg-orange-600 px-4 py-1 rounded-2xl text-orange-500 hover:text-white h-8 w-28 font-black text-xs uppercase cursor-pointer ">
+            contacts
+          </button>
+        </Link>
       </div>
       <div className="relative ">
         <div className="flex flex-col justify-center items-center">

@@ -35,7 +35,8 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search"
-            className="w-20 bg-transparent outline-none placeholder-gray-300 mx-4 py-2 text-white capitalize"
+            maxLength="16"
+            className="w-40 bg-transparent outline-none placeholder-gray-300 mx-4 py-2 text-white capitalize"
           />
         </Link>
       </div>
@@ -63,7 +64,7 @@ const Header = () => {
         </li>
         <li>
           <Link href="/" className="mx-7 py-2 hover:text-orange-500">
-            Contacts
+            Contact
           </Link>
         </li>
       </ul>

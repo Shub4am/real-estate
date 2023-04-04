@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import App from './_app';
+import HomePage from './home';
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
       <main className>
         <div>
-          <App />
+          <HomePage />
         </div>
       </main>
     </>
