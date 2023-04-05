@@ -11,11 +11,9 @@ const Services = () => {
   return (
     <div className="relative p-4 mb-4">
       <div className="flex justify-center items-center">
-        <Link href="/">
-          <button className="relative mt-24 bg-blue-200 hover:bg-blue-600 px-4 py-1 rounded-2xl text-blue-500 hover:text-white h-8 w-28 font-black text-xs uppercase cursor-pointer ">
-            services
-          </button>
-        </Link>
+        <button className="relative mt-24 bg-blue-200 hover:bg-blue-600 px-4 py-1 rounded-2xl text-blue-500 hover:text-white h-8 w-28 font-black text-xs uppercase cursor-pointer ">
+          services
+        </button>
       </div>
       <div className="relative ">
         <div className="flex flex-col justify-center items-center mt-20">

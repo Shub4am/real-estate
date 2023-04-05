@@ -44,11 +44,9 @@ const Form = () => {
   return (
     <div className="relative p-4 mb-4">
       <div className="flex justify-center items-center  p-3">
-        <Link href="/">
-          <button className="mt-[90px] mb-4 bg-orange-200 hover:bg-orange-600 px-4 py-1 rounded-2xl text-orange-500 hover:text-white h-8 w-28 font-black text-xs uppercase cursor-pointer ">
-            contacts
-          </button>
-        </Link>
+        <button className="mt-[90px] mb-4 bg-orange-200 hover:bg-orange-600 px-4 py-1 rounded-2xl text-orange-500 hover:text-white h-8 w-28 font-black text-xs uppercase cursor-pointer ">
+          contacts
+        </button>
       </div>
       <div className="relative ">
         <div className="flex flex-col justify-center items-center">
@@ -181,7 +179,7 @@ const Form = () => {
             </div>
             <button
               type="submit"
-              className="flex justify-center items-center py-[15px] px-[35px] bg-[#3361FF] rounded-[30px] capitalize text-white"
+              className="flex justify-center items-center py-[15px] px-[35px] bg-[#3361FF] hover:bg-[#11266e] rounded-[30px] capitalize text-white"
             >
               send request
             </button>

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-import About from './about';
-import Deals from './deals';
-import Services from './services';
-import Review from './review';
-import Insta from './insta';
-import Form from './form';
+import About from '../components/about';
+import Deals from '../components/deals';
+import Services from '../components/services';
+import Review from '../components/review';
+import Insta from '../components/insta';
+import Form from '../components/form';
 import scrollIcon from '../assets/icons/topArrowIcon.png';
 
 import Footer from '@/components/footer';
@@ -51,7 +51,7 @@ const HomePage = () => {
             onClick={handleScrollToTop}
             className="bg-slate-100 rounded shadow-xl overflow-visible"
           >
-            <Image src={scrollIcon} alt="scroll button" className="" />
+            <Image src={scrollIcon} alt="scroll button" />
           </button>
         </div>
       )}

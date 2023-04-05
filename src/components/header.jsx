@@ -1,77 +1,125 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
-import hamburgerMenu from '../../src/assets/icons/menu.png';
+import React, { useState, useEffect } from 'react';
 import searchIcon from '../../src/assets/icons/search.png';
 
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+
 const Header = () => {
+  const [header, setHeader] = useState(false);
+  const [headerColor, setHeaderColor] = useState('transparent');
+  const [headerText, setHeaderText] = useState('white');
+
+  const handleHeader = () => {
+    setHeader(!header);
+  };
+
+  useEffect(() => {
+    const handleColorChange = () => {
+      if (window.scrollY >= 250) {
+        setHeaderColor('linear-gradient(to right, #8e2de2, #4a00e0)');
+        setHeaderText('#ffffff');
+      } else {
+        setHeaderColor('transparent');
+        setHeaderText('#ffffff');
+      }
+    };
+    window.addEventListener('scroll', handleColorChange);
+  }, []);
+
   return (
-    <div className="w-full h-20 shadow-xl flex justify-between items-center relative">
-      {/*navbar always on top: className="w-full h-20 shadow-xl flex justify-between items-center fixed top-0 left-0 right-0 bg-[#040508a4] z-50 " */}
+    <div
+      style={{ background: `${headerColor}` }}
+      className=" fixed top-0 left-0 w-full h-20 shadow-xl flex justify-between items-center z-40 ease-in duration-300"
+    >
       {/* Menu + Name */}
 
-      <div className="ml-40">
-        <Link
-          href="/"
-          onClick={() => window.scrollTo(0, 0)}
-          className="flex mx-4 py-2 "
-        >
-          <Image
-            src={hamburgerMenu}
-            alt="Menu"
-            className="w-4 h-4 self-center"
-          />
-          <p className="ml-8 py-2 text-xl font-bold text-white hover:text-orange-500">
+      <div className="max-w-[1240px] m-5 flex justify-between items-center p-4">
+        <Link href="/">
+          <h1
+            style={{ color: `${headerText}` }}
+            className="py-2 text-2xl font-bold hover:text-orange-500"
+          >
             Constructor
-          </p>
+          </h1>
         </Link>
       </div>
 
       {/* Search */}
 
-      <div className="flex ml-3">
-        <Link href="/" className="flex">
-          <Image src={searchIcon} alt="Menu" className="w-4 h-4 self-center" />
-          <input
-            type="text"
-            placeholder="Search"
-            maxLength="16"
-            className="w-40 bg-transparent outline-none placeholder-gray-300 mx-4 py-2 text-white capitalize"
-          />
-        </Link>
+      <div className=" hidden sm:flex">
+        <Image src={searchIcon} alt="Menu" className="w-4 h-4 self-center" />
+        <input
+          type="text"
+          placeholder="Search"
+          maxLength="20"
+          className="w-40 bg-transparent outline-none placeholder-gray-300 mx-4 py-2 text-white capitalize"
+        />
       </div>
 
       {/* navbar Links */}
 
       <ul
-        className="flex text-sm font-bold text-white 
+        style={{ color: `${headerText}` }}
+        className="text-sm font-bold hidden sm:flex
       "
       >
-        <li>
-          <Link href="/" className="mx-7 py-2 hover:text-orange-500">
-            About
-          </Link>
+        <li className=" p-4 hover:text-orange-500">
+          <Link href="/">About</Link>
         </li>
-        <li>
-          <Link href="/" className="mx-7 py-2 hover:text-orange-500">
-            Services
-          </Link>
+        <li className=" p-4 hover:text-orange-500">
+          <Link href="/">Services</Link>
         </li>
-        <li>
-          <Link href="/" className="mx-7 py-2 hover:text-orange-500">
-            Reviews
-          </Link>
+        <li className=" p-4 hover:text-orange-500">
+          <Link href="/">Reviews</Link>
         </li>
-        <li>
-          <Link href="/" className="mx-7 py-2 hover:text-orange-500">
-            Contact
-          </Link>
+        <li className=" p-4 hover:text-orange-500">
+          <Link href="/">Contact</Link>
         </li>
       </ul>
 
-      <p className=" text-sm font-bold text-white  mx-2 mr-40 hover:text-orange-500 cursor-pointer">
+      <p
+        style={{ color: `${headerText}` }}
+        className="hidden sm:flex text-sm font-bold ml-10 mr-20 hover:text-orange-500 cursor-pointer"
+      >
         Get In Touch
       </p>
+
+      {/* Mobile hamburgerMenu */}
+
+      <div onClick={handleHeader} className="block sm:hidden p-4 z-10">
+        {header ? (
+          <AiOutlineClose size={30} style={{ color: `${headerText}` }} />
+        ) : (
+          <AiOutlineMenu size={30} style={{ color: `${headerText}` }} />
+        )}
+      </div>
+      <div
+        className={
+          header
+            ? 'sm:hidden absolute top-0 right-0 bottom-0 left-0 flex justify-center items-center w-full h-screen bg-[#020308ea] text-center ease-in duration-300'
+            : 'sm:hidden absolute top-0 right-0 bottom-0 left-[-100%] flex justify-center items-center w-full h-screen bg-[#020308ea] text-center ease-in duration-300'
+        }
+      >
+        <ul
+          style={{ color: `${headerText}` }}
+          className="text-sm font-bold 
+      "
+        >
+          <li className="mx-7 py-4 text-4xl hover:text-orange-500">
+            <Link href="/">About</Link>
+          </li>
+          <li className="mx-7 py-4 text-4xl hover:text-orange-500">
+            <Link href="/">Services</Link>
+          </li>
+          <li className="mx-7 py-4 text-4xl hover:text-orange-500">
+            <Link href="/">Reviews</Link>
+          </li>
+          <li className="mx-7 py-4 text-4xl hover:text-orange-500">
+            <Link href="/">Contact</Link>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
