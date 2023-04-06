@@ -12,7 +12,7 @@ import cardImageBg9 from '../assets/images/Image-9.png';
 
 const HomeCardComponent = () => {
   return (
-    <div className="grid grid-cols-3 gap-5 m-5 p-5 ">
+    <div className="flex flex-col sm:grid grid-cols-3 gap-5 m-5 p-5 ">
       <Card
         imageSrc={cardImageBg1}
         title="Modern Glass House"
@@ -64,7 +64,7 @@ const HomeCardComponent = () => {
 
 const ApartmentCardComponent = () => {
   return (
-    <div className="grid grid-cols-3 gap-5 m-5 p-5 ">
+    <div className="flex flex-col sm:grid grid-cols-3 gap-5 m-5 p-5 ">
       <Card
         imageSrc={cardImageBg4}
         title="Modern Glass House"
@@ -137,7 +137,9 @@ const Tabs = () => {
               idx === activeTabIndex
                 ? 'border-b-2 border-orange-500 text-orange-500'
                 : 'text-gray-500 hover:text-gray-700'
-            } py-4 px-6 font-medium focus:outline-none`}
+            } px-2 font-normal py-4 sm:px-6 sm:font-medium focus:outline-none ${
+              idx === 3 && 'hidden sm:flex'
+            }`}
             onClick={() => setActiveTabIndex(idx)}
           >
             {tab.label}

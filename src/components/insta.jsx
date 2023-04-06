@@ -22,10 +22,10 @@ const Insta = () => {
       </div>
       <div className="relative ">
         <div className="flex flex-col justify-center items-center">
-          <p className="text-[160px] text-blue-700 opacity-5 font-black text-center z-0 absolute top-0 left-0 w-full uppercase">
+          <p className="text-9xl sm:text-[160px] text-blue-700 opacity-5 font-black text-center z-0 absolute top-0 left-0 w-full uppercase">
             instagram
           </p>
-          <p className="text-4xl text-blue-900 font-bold text-center z-20 relative capitalize mt-[100px]">
+          <p className="text-2xl sm:text-4xl text-blue-900 font-bold text-center z-20 relative capitalize mt-[50px] sm:mt-[100px]">
             checkout what our customers shared{' '}
             <span className="normal-case">#homes</span>
           </p>
@@ -33,22 +33,22 @@ const Insta = () => {
       </div>
 
       <div className="flex justify-center items-center">
-        <div className="grid grid-cols-4 gap-5 m-5 p-5 mt-20 max-w-[1100px] ">
+        <div className="grid sm:grid-cols-4 gap-5 m-5 p-5 mt-20 max-w-[1100px] ">
           <Image
             src={instaImg1}
             alt="instagram image"
-            className="mx-5 my-3 w-[255px] h-[255px] rounded-lg hover:scale-110"
+            className="mx-5 my-3 w-[255px] h-[255px] rounded-lg hover:scale-110 ease-in duration-200"
           />
           <Image
             src={instaImg2}
             alt="instagram image"
-            className="mx-5 my-3 w-[255px] h-[255px] rounded-lg hover:scale-110"
+            className="mx-5 my-3 w-[255px] h-[255px] rounded-lg hover:scale-110  ease-in duration-200"
           />
           <div className="relative ">
             <Image
               src={instaImg3}
               alt="instagram image"
-              className="mx-5 my-3 w-[255px] h-[255px]  rounded-lg hover:scale-110"
+              className="mx-5 my-3 w-[255px] h-[255px]  rounded-lg hover:scale-110  ease-in duration-200"
             />
             <div className="absolute top-[5px] left-[5px] mt-[54px] ml-[66px]  p-[30px] flex justify-center items-center ">
               <div className=" flex justify-center items-center bg-[#00000080]  p-[25px] gap-[10px] w-20 h-20 rounded-[120px] ">
@@ -59,27 +59,27 @@ const Insta = () => {
           <Image
             src={instaImg4}
             alt="instagram image"
-            className="mx-5 my-3 w-[255px] h-[255px] rounded-lg hover:scale-110"
+            className="mx-5 my-3 w-[255px] h-[255px] rounded-lg hover:scale-110  ease-in duration-200"
           />
           <Image
             src={instaImg5}
             alt="instagram image"
-            className="mx-5 my-3 w-[255px] h-[255px] rounded-lg hover:scale-110"
+            className="mx-5 my-3 w-[255px] h-[255px] rounded-lg hover:scale-110  ease-in duration-200"
           />
           <Image
             src={instaImg6}
             alt="instagram image"
-            className="mx-5 my-3 w-[255px] h-[255px] rounded-lg hover:scale-110"
+            className="mx-5 my-3 w-[255px] h-[255px] rounded-lg hover:scale-110  ease-in duration-200"
           />
           <Image
             src={instaImg7}
             alt="instagram image"
-            className="mx-5 my-3 w-[255px] h-[255px] rounded-lg hover:scale-110"
+            className="mx-5 my-3 w-[255px] h-[255px] rounded-lg hover:scale-110  ease-in duration-200"
           />
           <Image
             src={instaImg8}
             alt="instagram image"
-            className="mx-5 my-3 w-[255px] h-[255px] rounded-lg hover:scale-110"
+            className="mx-5 my-3 w-[255px] h-[255px] rounded-lg hover:scale-110  ease-in duration-200"
           />
         </div>
       </div>

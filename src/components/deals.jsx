@@ -12,10 +12,10 @@ const Deals = () => {
       </div>
       <div className="relative ">
         <div className="flex flex-col justify-center items-center">
-          <p className="text-[180px] text-blue-700 opacity-5 font-black text-center z-0 absolute top-0 left-0 w-full uppercase">
+          <p className=" text-[140px] sm:text-[180px] text-blue-700 opacity-5 font-black text-center z-0 absolute top-0 left-0 w-full uppercase">
             deals
           </p>
-          <p className="text-4xl text-blue-900 font-bold text-center z-20 relative capitalize mt-28">
+          <p className="text-4xl text-blue-900 font-bold text-center z-20 relative capitalize mt-20 sm:mt-28">
             our best deals for today
           </p>
         </div>

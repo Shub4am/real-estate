@@ -4,7 +4,6 @@ import React from 'react';
 import userImg from '../assets/images/user1.png';
 import userImg1 from '../assets/images/user2.png';
 import userImg2 from '../assets/images/user3.png';
-import Link from 'next/link';
 
 const Review = () => {
   return (
@@ -16,10 +15,10 @@ const Review = () => {
       </div>
       <div className="relative ">
         <div className="flex flex-col justify-center items-center">
-          <p className="text-[180px] text-blue-700 opacity-5 font-black text-center z-0 absolute top-0 left-0 w-full uppercase">
+          <p className="text-[90px] sm:text-[180px] text-blue-700 opacity-5 font-black text-center z-0 absolute top-0 left-0 w-full uppercase">
             reviews
           </p>
-          <p className="text-4xl text-blue-900 font-bold text-center z-20 relative capitalize mt-28">
+          <p className="text-4xl text-blue-900 font-bold text-center z-20 relative capitalize mt-10 sm:mt-28">
             what our customers say
           </p>
         </div>
@@ -33,8 +32,8 @@ const Review = () => {
         </p>
       </div>
 
-      <div className="flex justify-center items-center mt-[60px] ml-[30px]  ">
-        <div className=" flex flex-col">
+      <div className="flex flex-col sm:flex-row justify-center items-center mt-[60px] ml-[30px]  ">
+        <div className=" flex flex-col mb-5">
           <div className="w-[350px] h-[160px] flex items-start p-[30px] gap-[10px] bg-white shadow-md rounded-[10px] overflow-scroll ">
             <p className=" font-semibold text-[13px] leading-[25px] text-[#7D8FB3]">
               Thank you very much for the house found. This is an ideal option
@@ -59,7 +58,7 @@ const Review = () => {
           </div>
         </div>
 
-        <div className=" flex flex-col ">
+        <div className=" flex flex-col mb-5">
           <div className="w-[350px] h-[185px] flex items-start p-[30px] gap-[10px] bg-white shadow-md rounded-[10px] ml-[30px] overflow-scroll ">
             <p className=" font-semibold text-[13px] leading-[25px] text-[#7D8FB3]">
               A gentleman from New York discovered what he calls an “oversight”
@@ -85,7 +84,7 @@ const Review = () => {
           </div>
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col mb-5">
           <div className="w-[350px] h-[160px] flex items-start p-[30px] gap-[10px] bg-white shadow-md rounded-[10px] ml-[30px] overflow-scroll">
             <p className=" font-semibold text-[13px] leading-[25px] text-[#7D8FB3]">
               For many of us, our very first experience of learning about the

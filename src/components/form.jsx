@@ -4,7 +4,6 @@ import usernameIcon from '../assets/icons/Icon.png';
 import callIcon from '../assets/icons/callIcon.png';
 import emailIcon from '../assets/icons/email.png';
 import messageIcon from '../assets/icons/message.png';
-import Link from 'next/link';
 
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -50,10 +49,10 @@ const Form = () => {
       </div>
       <div className="relative ">
         <div className="flex flex-col justify-center items-center">
-          <p className="text-10xl text-blue-700 opacity-5 font-black text-center z-0 absolute top-0 left-0 w-full uppercase">
+          <p className=" text-8xl  sm:text-10xl text-blue-700 opacity-5 font-black text-center z-0 absolute top-0 left-0 w-full uppercase">
             contacts
           </p>
-          <p className="text-4xl text-blue-900 font-bold text-center z-20 relative capitalize mt-14">
+          <p className="text-4xl text-blue-900 font-bold text-center z-20 relative capitalize mt-7 sm:mt-14 ">
             get in touch now
           </p>
         </div>
@@ -70,17 +69,17 @@ const Form = () => {
 
       {/* FORM */}
 
-      <div className="flex justify-center items-center">
+      <div className=" sm:flex justify-center items-center">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="flex flex-col items-center gap-[30px] p-0 w-[670px] h-[330px] ">
+          <div className="sm:flex flex-col justify-center items-center gap-[30px] p-0 w-[670px] h-full ">
             {/* 1st row */}
-            <div className="flex items-start p-0 gap-[30px] w-full h-[60px] relative">
-              <label className="relative ">
+            <div className="sm:flex items-start p-0 gap-[30px] w-full h-[60px] relative">
+              <label className="relative">
                 <input
                   {...register('firstName')}
                   name="firstName"
                   placeholder="First Name"
-                  className="flex justify-between items-center rounded-xl py-[15px] px-[30px] shadow-md w-[320px] h-[60px] capitalize"
+                  className="flex justify-between items-center rounded-xl py-[15px] px-[30px] shadow-md sm:w-[320px] h-[60px] capitalize mb-5 sm:mb-0"
                 />
                 <Image
                   src={usernameIcon}
@@ -99,7 +98,7 @@ const Form = () => {
                   {...register('lastName')}
                   name="lastName"
                   placeholder="Last Name"
-                  className="flex justify-between items-center  rounded-xl py-[15px] px-[30px] shadow-md w-[320px] h-[60px] capitalize"
+                  className="flex justify-between items-center  rounded-xl py-[15px] px-[30px] shadow-md sm:w-[320px] h-[60px] capitalize mb-5 sm:mb-0"
                 />
                 <Image
                   src={usernameIcon}
@@ -115,13 +114,13 @@ const Form = () => {
             </div>
 
             {/* 2nd row */}
-            <div className="flex items-start p-0 gap-[30px] w-full h-[60px] relative">
+            <div className="sm:flex items-start p-0 gap-[30px] w-full h-[60px] relative mt-36 sm:mt-0">
               <label className="relative ">
                 <input
                   {...register('email')}
                   name="email"
                   placeholder="Email Address"
-                  className="flex justify-between items-center  rounded-xl py-[15px] px-[30px] shadow-md w-[320px] h-[60px] capitalize"
+                  className="flex justify-between items-center  rounded-xl py-[15px] px-[30px] shadow-md sm:w-[320px] h-[60px] capitalize  mb-5  sm:mb-0"
                 />
                 <Image
                   src={emailIcon}
@@ -140,7 +139,7 @@ const Form = () => {
                   {...register('phoneNumber')}
                   name="phoneNumber"
                   placeholder="Phone Number"
-                  className="flex justify-between items-center  rounded-xl py-[15px] px-[30px] shadow-md w-[320px] h-[60px]"
+                  className="flex justify-between items-center  rounded-xl py-[15px] px-[30px] shadow-md sm:w-[320px] h-[60px] mb-5  sm:mb-0"
                 />
                 <Image
                   src={callIcon}
@@ -157,13 +156,13 @@ const Form = () => {
 
             {/* 3rd row  */}
 
-            <div className="flex justify-between items-center p-0 gap-[10px] w-full h-[60px] relative">
+            <div className="sm:flex justify-between items-center p-0 gap-[10px] w-full h-[60px] relative mt-36 sm:mt-0">
               <label className="relative">
                 <input
                   {...register('message')}
                   name="message"
                   placeholder="Your Message"
-                  className="flex justify-between items-center  rounded-xl py-[15px] px-[30px] shadow-md w-[670px] h-[60px] overflow-ellipsis overflow-hidden"
+                  className="flex justify-between items-center  rounded-xl py-[15px] px-[30px] shadow-md sm:w-[670px] h-[60px] overflow-ellipsis overflow-hidden"
                 />
                 <Image
                   src={messageIcon}
@@ -179,7 +178,7 @@ const Form = () => {
             </div>
             <button
               type="submit"
-              className="flex justify-center items-center py-[15px] px-[35px] bg-[#3361FF] hover:bg-[#11266e] rounded-[30px] capitalize text-white"
+              className="flex justify-center items-center py-[15px] px-[35px] bg-[#3361FF] hover:bg-[#11266e] rounded-[30px] capitalize text-white mt-7 sm:mt-0"
             >
               send request
             </button>
