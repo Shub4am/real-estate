@@ -13,12 +13,13 @@ const Hero = ({ address, phone, email }) => {
   };
 
   return (
-    <section
-      className="flex flex-col w-full h-screen bg-center bg-cover bg-no-repeat rounded-b-4xl"
-      style={{
-        backgroundImage: `url(${heroBg.src})`,
-      }}
-    >
+    <section className="flex flex-col w-full h-screen ">
+      <Image
+        src={heroBg}
+        alt="bg image"
+        fill
+        className="w-full h-screen bg-no-repeat rounded-b-4xl object-cover object-center"
+      />
       <div className="w-full h-screen relative ">
         <div className="relative h-screen text-center flex flex-col justify-center items-center">
           <button className="hidden lg:block bg-orange-600 hover:bg-orange-500 px-2 py-1 rounded-2xl text-white h-8 w-28 font-black text-xs uppercase cursor-pointer">
