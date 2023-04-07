@@ -64,7 +64,7 @@ const HomeCardComponent = () => {
 
 const ApartmentCardComponent = () => {
   return (
-    <div className="flex flex-col sm:grid grid-cols-3 gap-5 m-5 p-5 ">
+    <div className="flex flex-col sm:grid md:grid-cols-2 xl:grid-cols-3 gap-5 m-5 p-5  ">
       <Card
         imageSrc={cardImageBg4}
         title="Modern Glass House"
