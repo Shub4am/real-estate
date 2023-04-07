@@ -25,7 +25,7 @@ const Insta = () => {
           <p className="text-9xl sm:text-[160px] text-blue-700 opacity-5 font-black text-center z-0 absolute top-0 left-0 w-full uppercase">
             instagram
           </p>
-          <p className="text-2xl sm:text-4xl text-blue-900 font-bold text-center z-20 relative capitalize mt-[50px] sm:mt-[100px]">
+          <p className="text-2xl sm:text-4xl text-blue-900 font-bold text-center z-20 relative capitalize mt-[55px]">
             checkout what our customers shared{' '}
             <span className="normal-case">#homes</span>
           </p>
