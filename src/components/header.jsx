@@ -107,16 +107,16 @@ const Header = () => {
       "
         >
           <li className="mx-7 py-4 text-4xl hover:text-orange-500">
-            <Link href="/">About</Link>
+            <Link href="#about-container">About</Link>
           </li>
           <li className="mx-7 py-4 text-4xl hover:text-orange-500">
-            <Link href="/">Services</Link>
+            <Link href="#services">Services</Link>
           </li>
           <li className="mx-7 py-4 text-4xl hover:text-orange-500">
-            <Link href="/">Reviews</Link>
+            <Link href="#reviews">Reviews</Link>
           </li>
           <li className="mx-7 py-4 text-4xl hover:text-orange-500">
-            <Link href="/">Contact</Link>
+            <Link href="#contact">Contact</Link>
           </li>
         </ul>
       </div>
