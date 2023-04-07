@@ -4,7 +4,6 @@ import heroBg from '../assets/images/heroBackground.png';
 import arrowIcon from '../assets/icons/arrow.png';
 import phoneIcon from '../assets/icons/contact.png';
 import mailIcon from '../assets/icons/mail.png';
-import Header from './header';
 
 const Hero = ({ address, phone, email }) => {
   const showMoreBtn = () => {

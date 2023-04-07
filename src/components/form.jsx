@@ -49,17 +49,17 @@ const Form = () => {
       </div>
       <div className="relative ">
         <div className="flex flex-col justify-center items-center">
-          <p className=" text-8xl  sm:text-10xl text-blue-700 opacity-5 font-black text-center z-0 absolute top-0 left-0 w-full uppercase">
+          <p className=" text-8xl  sm:text-10xl text-blue-700 opacity-5 font-black text-center z-0 absolute top-0 left-0 w-full uppercase dark:text-white">
             contacts
           </p>
-          <p className="text-4xl text-blue-900 font-bold text-center z-20 relative capitalize mt-7 sm:mt-14 ">
+          <p className="text-4xl text-blue-900 font-bold text-center z-20 relative capitalize mt-7 sm:mt-14 dark:text-gray-300">
             get in touch now
           </p>
         </div>
       </div>
 
       <div className="relative justify-center items-center">
-        <p className="font-medium text-base text-center mt-20 mb-10 text-[#7D8FB3]">
+        <p className="font-medium text-base text-center mt-20 mb-10 text-bluePText">
           We have developed a unique space where you can work and create.
           <br /> We thought of everything to the smallest detail.
           <br />
@@ -79,7 +79,7 @@ const Form = () => {
                   {...register('firstName')}
                   name="firstName"
                   placeholder="First Name"
-                  className="flex justify-between items-center rounded-xl py-[15px] px-[30px] shadow-md sm:w-[320px] h-[60px] capitalize mb-5 sm:mb-0"
+                  className="flex justify-between items-center rounded-xl py-[15px] px-[30px] shadow-md sm:w-[320px] h-[60px] capitalize mb-5 sm:mb-0 dark:bg-gray-600"
                 />
                 <Image
                   src={usernameIcon}
@@ -98,7 +98,7 @@ const Form = () => {
                   {...register('lastName')}
                   name="lastName"
                   placeholder="Last Name"
-                  className="flex justify-between items-center  rounded-xl py-[15px] px-[30px] shadow-md sm:w-[320px] h-[60px] capitalize mb-5 sm:mb-0"
+                  className="flex justify-between items-center  rounded-xl py-[15px] px-[30px] shadow-md sm:w-[320px] h-[60px] capitalize mb-5 sm:mb-0 dark:bg-gray-600"
                 />
                 <Image
                   src={usernameIcon}
@@ -120,7 +120,7 @@ const Form = () => {
                   {...register('email')}
                   name="email"
                   placeholder="Email Address"
-                  className="flex justify-between items-center  rounded-xl py-[15px] px-[30px] shadow-md sm:w-[320px] h-[60px] capitalize  mb-5  sm:mb-0"
+                  className="flex justify-between items-center  rounded-xl py-[15px] px-[30px] shadow-md sm:w-[320px] h-[60px] capitalize  mb-5  sm:mb-0 dark:bg-gray-600"
                 />
                 <Image
                   src={emailIcon}
@@ -139,7 +139,7 @@ const Form = () => {
                   {...register('phoneNumber')}
                   name="phoneNumber"
                   placeholder="Phone Number"
-                  className="flex justify-between items-center  rounded-xl py-[15px] px-[30px] shadow-md sm:w-[320px] h-[60px] mb-5  sm:mb-0"
+                  className="flex justify-between items-center  rounded-xl py-[15px] px-[30px] shadow-md sm:w-[320px] h-[60px] mb-5  sm:mb-0 dark:bg-gray-600"
                 />
                 <Image
                   src={callIcon}
@@ -162,7 +162,7 @@ const Form = () => {
                   {...register('message')}
                   name="message"
                   placeholder="Your Message"
-                  className="flex justify-between items-center  rounded-xl py-[15px] px-[30px] shadow-md sm:w-[670px] h-[60px] overflow-ellipsis overflow-hidden"
+                  className="flex justify-between items-center  rounded-xl py-[15px] px-[30px] shadow-md sm:w-[670px] h-[60px] overflow-ellipsis overflow-hidden dark:bg-gray-600"
                 />
                 <Image
                   src={messageIcon}

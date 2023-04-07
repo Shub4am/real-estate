@@ -4,7 +4,7 @@ import eyeIcon from '../assets/icons/eye.png';
 
 const Card = ({ imageSrc, title, price }) => {
   return (
-    <div className="w-[350px] h-[400px] hover:scale-105 ease-in duration-200 mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+    <div className="w-[350px] h-[400px] hover:scale-105 ease-in duration-200 mx-auto bg-white rounded-xl shadow-md overflow-hidden dark:bg-slate-700">
       <div className="flex flex-col items-start">
         <div className="relative">
           <Image
@@ -26,16 +26,16 @@ const Card = ({ imageSrc, title, price }) => {
         </div>
 
         <div className="p-8">
-          <div className="capitalize text-[#6B7A99] font-black text-[15px] leading-[30px]">
+          <div className="capitalize text-cardText font-black text-[15px] leading-[30px] dark:text-white">
             {title}
           </div>
-          <p className=" text-2xl leading-[30px] font-bold text-[#6B7A99] py-[10px] ">
+          <p className=" text-2xl leading-[30px] font-bold text-cardText py-[10px] dark:text-white ">
             {price}
           </p>
-          <p className="text-[13px] leading-[25px] text-[#ADB8CC] font-bold py-[10px] ">
+          <p className="text-[13px] leading-[25px] text-blueCardSubTitle font-bold py-[10px]  dark:text-white">
             14 Patrick Brem Ct. Mahwah, NJ07430
           </p>
-          <p className="text-xs leading-5 text-[#ADB8CC] font-bold">
+          <p className="text-xs leading-5 text-blueCardSubTitle font-bold dark:text-white">
             3 Beds&nbsp;&nbsp;-&nbsp;&nbsp;2 baths&nbsp;&nbsp;-&nbsp;&nbsp;3,450
             sqft
           </p>

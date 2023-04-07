@@ -22,10 +22,10 @@ const Insta = () => {
       </div>
       <div className="relative ">
         <div className="flex flex-col justify-center items-center">
-          <p className="text-9xl sm:text-[160px] text-blue-700 opacity-5 font-black text-center z-0 absolute top-0 left-0 w-full uppercase">
+          <p className="text-9xl sm:text-[160px] text-blue-700 opacity-5 font-black text-center z-0 absolute top-0 left-0 w-full uppercase dark:text-white">
             instagram
           </p>
-          <p className="text-2xl sm:text-4xl text-blue-900 font-bold text-center z-20 relative capitalize mt-[55px]">
+          <p className="text-2xl sm:text-4xl text-blue-900 font-bold text-center z-20 relative capitalize mt-[55px] dark:text-gray-300">
             checkout what our customers shared{' '}
             <span className="normal-case">#homes</span>
           </p>
@@ -52,7 +52,7 @@ const Insta = () => {
             />
             <div className="absolute top-[5px] left-[5px] mt-[54px] ml-[66px]  p-[30px] flex justify-center items-center ">
               <div className=" flex justify-center items-center bg-[#00000080]  p-[25px] gap-[10px] w-20 h-20 rounded-[120px] ">
-                <Image src={instaIcon} alt="insta icon" className="w-5 h-5  " />
+                <Image src={instaIcon} alt="insta icon" className="w-5 h-5 " />
               </div>
             </div>
           </div>

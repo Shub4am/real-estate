@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import searchIcon from '../../src/assets/icons/search.png';
 
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import ThemeChanger from './themeChanger';
 
 const Header = () => {
   const [header, setHeader] = useState(false);
@@ -80,10 +81,13 @@ const Header = () => {
 
       <p
         style={{ color: `${headerText}` }}
-        className="hidden sm:flex text-sm font-bold ml-10 mr-20 hover:text-orange-500 cursor-pointer"
+        className="hidden sm:flex text-sm font-bold ml-10 mr-5 hover:text-orange-500 cursor-pointer"
       >
         Get In Touch
       </p>
+      <div className="mr-10">
+        <ThemeChanger />
+      </div>
 
       {/* Mobile hamburgerMenu */}
 

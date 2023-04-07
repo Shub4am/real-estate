@@ -10,7 +10,7 @@ const Footer = () => {
       {/* Row 1 */}
       <div className="sm:flex justify-center items-center py-[20px] sm:py-[90px] px-2 ">
         {/* text  */}
-        <p className="text-2xl text-center leading-[30px] font-bold text-[#4D5E80] capitalize mb-10 sm:mb-0">
+        <p className="text-2xl text-center leading-[30px] font-bold text-[#4D5E80] capitalize mb-10 sm:mb-0 dark:text-white">
           constructor
         </p>
         {/* menu  */}
@@ -86,26 +86,26 @@ const Footer = () => {
       {/* Row 2 */}
 
       <div className="relative py-0 px=[340px] border-t-2 border-solid border-[#EDEFF2] flex items-center justify-between gap-5">
-        <p className="capitalize text-[10px] sm:text-[13px] font-semibold leading-[25px] text-center text-[#7D8FB3]">
-          © 2030 Company. All Rights Reserved.
+        <p className="capitalize text-[10px] sm:text-[13px] font-semibold leading-[25px] text-center text-bluePText dark:text-white">
+          © 2023 Company. All Rights Reserved.
         </p>
         <Link
           href="https://www.figma.com/community/file/1216698613875563555/Company-One"
           target="_blank"
-          className="capitalize text-[10px] sm:text-[13px] font-semibold leading-[25px] text-center text-[#7D8FB3] hover:text-orange-500"
+          className="capitalize text-[10px] sm:text-[13px] font-semibold leading-[25px] text-center text-bluePText hover:text-orange-500 dark:text-white"
         >
           Design by Spline One
         </Link>
         <div className="flex items-start p-4 gap-[57px]">
           <Link
             href="#"
-            className="capitalize text-[10px] sm:text-[13px] font-semibold leading-[25px] text-center text-[#7D8FB3] hover:text-orange-500"
+            className="capitalize text-[10px] sm:text-[13px] font-semibold leading-[25px] text-center text-bluePText hover:text-orange-500 dark:text-white"
           >
             terms
           </Link>
           <Link
             href="#"
-            className="capitalize text-[10px] sm:text-[13px] font-semibold leading-[25px] text-center text-[#7D8FB3]  hover:text-orange-500"
+            className="capitalize text-[10px] sm:text-[13px] font-semibold leading-[25px] text-center text-bluePText  hover:text-orange-500 dark:text-white"
           >
             privacy
           </Link>

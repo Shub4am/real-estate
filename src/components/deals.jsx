@@ -11,17 +11,17 @@ const Deals = () => {
       </div>
       <div className="relative ">
         <div className="flex flex-col justify-center items-center">
-          <p className=" text-[140px] sm:text-[180px] text-blue-700 opacity-5 font-black text-center z-0 absolute top-0 left-0 w-full uppercase">
+          <p className=" text-[140px] sm:text-[180px] text-blue-700 opacity-5 font-black text-center z-0 absolute top-0 left-0 w-full uppercase dark:text-white">
             deals
           </p>
-          <p className="text-4xl text-blue-900 font-bold text-center z-20 relative capitalize mt-20 sm:mt-28">
+          <p className="text-4xl text-blue-900 font-bold text-center z-20 relative capitalize mt-20 sm:mt-28 dark:text-gray-300">
             our best deals for today
           </p>
         </div>
       </div>
 
       <div className="relative justify-center items-center">
-        <p className="font-medium text-base text-center mt-20  text-[#7D8FB3]">
+        <p className="font-medium text-base text-center mt-20  text-bluePText">
           Real estate is &quot;property consisting of land and the buildings on
           <br />
           it, along with its natural resources such as crops,
