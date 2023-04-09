@@ -15,6 +15,10 @@ const Header = () => {
     setHeader(!header);
   };
 
+  const handleMobileHeader = () => {
+    setHeader(false);
+  };
+
   useEffect(() => {
     const handleColorChange = () => {
       if (window.scrollY >= 250) {
@@ -111,16 +115,24 @@ const Header = () => {
       "
         >
           <li className="mx-7 py-4 text-4xl hover:text-orange-500">
-            <Link href="#about-container">About</Link>
+            <Link href="#about-container" onClick={handleMobileHeader}>
+              About
+            </Link>
           </li>
           <li className="mx-7 py-4 text-4xl hover:text-orange-500">
-            <Link href="#services">Services</Link>
+            <Link href="#services" onClick={handleMobileHeader}>
+              Services
+            </Link>
           </li>
           <li className="mx-7 py-4 text-4xl hover:text-orange-500">
-            <Link href="#reviews">Reviews</Link>
+            <Link href="#reviews" onClick={handleMobileHeader}>
+              Reviews
+            </Link>
           </li>
           <li className="mx-7 py-4 text-4xl hover:text-orange-500">
-            <Link href="#contact">Contact</Link>
+            <Link href="#contact" onClick={handleMobileHeader}>
+              Contact
+            </Link>
           </li>
         </ul>
       </div>
