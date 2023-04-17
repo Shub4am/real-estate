@@ -125,6 +125,11 @@ const Header = () => {
             </Link>
           </li>
           <li className="mx-7 py-4 text-4xl hover:text-orange-500">
+            <Link href="#deals" onClick={handleMobileHeader}>
+              Deals
+            </Link>
+          </li>
+          <li className="mx-7 py-4 text-4xl hover:text-orange-500">
             <Link href="#reviews" onClick={handleMobileHeader}>
               Reviews
             </Link>

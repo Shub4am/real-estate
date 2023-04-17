@@ -68,48 +68,48 @@ const ApartmentCardComponent = () => {
       <Card
         imageSrc={cardImageBg4}
         title="Modern Glass House"
-        price="$ 1,625,000"
+        price="$ 2,500,000"
       />
       <Card
         imageSrc={cardImageBg5}
         title="Modern Glass House"
-        price="$ 1,625,000"
+        price="$ 2,500,000"
       />
       <Card
         imageSrc={cardImageBg6}
         title="Modern Glass House"
-        price="$ 1,625,000"
+        price="$ 2,500,000"
       />
       <Card
         imageSrc={cardImageBg7}
         title="Modern Glass House"
-        price="$ 1,625,000"
+        price="$ 2,500,000"
       />
       <Card
         imageSrc={cardImageBg8}
         title="Modern Glass House"
-        price="$ 1,625,000"
+        price="$ 2,500,000"
       />
       <Card
         imageSrc={cardImageBg9}
         title="Modern Glass House"
-        price="$ 1,625,000"
+        price="$ 2,500,000"
       />
 
       <Card
         imageSrc={cardImageBg1}
         title="Modern Glass House"
-        price="$ 1,625,000"
+        price="$ 2,500,000"
       />
       <Card
         imageSrc={cardImageBg2}
         title="Modern Glass House"
-        price="$ 1,625,000"
+        price="$ 2,500,000"
       />
       <Card
         imageSrc={cardImageBg3}
         title="Modern Glass House"
-        price="$ 1,625,000"
+        price="$ 2,500,000"
       />
     </div>
   );

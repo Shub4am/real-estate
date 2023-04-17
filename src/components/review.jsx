@@ -34,7 +34,7 @@ const Review = () => {
 
       <div className="flex flex-col sm:flex-row justify-center items-center mt-[60px] ml-[30px]  ">
         <div className=" flex flex-col mb-5">
-          <div className="w-[350px] h-[160px] flex items-start p-[30px] gap-[10px] bg-white  dark:bg-slate-700 shadow-md rounded-[10px] overflow-scroll ">
+          <div className="w-[350px] h-[160px] flex items-start p-[30px] gap-[10px] bg-white  dark:bg-slate-700 shadow-md rounded-[10px] ">
             <p className=" font-semibold text-[13px] leading-[25px] text-bluePText dark:text-white">
               Thank you very much for the house found. This is an ideal option
               for our family at the location and price. The company employs real
@@ -59,7 +59,7 @@ const Review = () => {
         </div>
 
         <div className=" flex flex-col mb-5">
-          <div className="w-[350px] h-[185px] flex items-start p-[30px] gap-[10px] bg-white  dark:bg-slate-700 shadow-md rounded-[10px] ml-[30px] overflow-scroll ">
+          <div className="w-[350px] h-[185px] flex items-start p-[30px] gap-[10px] bg-white  dark:bg-slate-700 shadow-md rounded-[10px] ml-[30px]  ">
             <p className=" font-semibold text-[13px] leading-[25px] text-bluePText dark:text-white">
               A gentleman from New York discovered what he calls an “oversight”
               on the part of 99.9% of all marketers that allows him to get
@@ -83,9 +83,8 @@ const Review = () => {
             </div>
           </div>
         </div>
-
         <div className="flex flex-col mb-5">
-          <div className="w-[350px] h-[160px] flex items-start p-[30px] gap-[10px] bg-white  dark:bg-slate-700 shadow-md rounded-[10px] ml-[30px] overflow-scroll">
+          <div className="w-[350px] h-[160px] flex items-start p-[30px] gap-[10px] bg-white  dark:bg-slate-700 shadow-md rounded-[10px] ml-[30px] ">
             <p className=" font-semibold text-[13px] leading-[25px] text-bluePText dark:text-white">
               For many of us, our very first experience of learning about the
               celestial bodies begins when we saw our first full moon in the
