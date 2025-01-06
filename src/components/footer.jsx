@@ -7,7 +7,7 @@ import rightArrowIcon from "../assets/icons/rightArrowIcon.png";
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <div className="relative p-4 mb-4 mx-[10px] border-t-2 border-solid border-[#EDEFF2]">
+    <div className="relative p-4 mx-[10px] border-t-2 border-solid border-[#EDEFF2]">
       {/* Row 1 */}
       <div className="sm:flex justify-center items-center py-[20px] sm:py-[90px] px-2 ">
         {/* text  */}
