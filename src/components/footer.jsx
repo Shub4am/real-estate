@@ -1,10 +1,11 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import starIcon from '../assets/icons/starIcon.png';
-import rightArrowIcon from '../assets/icons/rightArrowIcon.png';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import starIcon from "../assets/icons/starIcon.png";
+import rightArrowIcon from "../assets/icons/rightArrowIcon.png";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
   return (
     <div className="relative p-4 mb-4 mx-[10px] border-t-2 border-solid border-[#EDEFF2]">
       {/* Row 1 */}
@@ -87,7 +88,7 @@ const Footer = () => {
 
       <div className="relative py-0 px=[340px] border-t-2 border-solid border-[#EDEFF2] flex items-center justify-between gap-5">
         <p className="capitalize text-[10px] sm:text-[13px] font-semibold leading-[25px] text-center text-bluePText dark:text-white">
-          © 2023 Company. All Rights Reserved.
+          © {year} Company. All Rights Reserved.
         </p>
         <Link
           href="https://www.figma.com/community/file/1216698613875563555/Company-One"
