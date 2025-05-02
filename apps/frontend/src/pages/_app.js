@@ -2,6 +2,7 @@ import Header from '@/components/header';
 import '@/styles/globals.css';
 import { ThemeProvider } from 'next-themes';
 import { AuthProvider, useAuth } from '@/contexts/AuthContext';
+import { PropertyProvider } from '@/contexts/PropertyContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useState } from 'react';
@@ -61,7 +62,9 @@ export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider enableSystem={true} attribute="class">
       <AuthProvider>
-        <AppContent Component={Component} pageProps={pageProps} />
+        <PropertyProvider>
+          <AppContent Component={Component} pageProps={pageProps} />
+        </PropertyProvider>
       </AuthProvider>
     </ThemeProvider>
   );

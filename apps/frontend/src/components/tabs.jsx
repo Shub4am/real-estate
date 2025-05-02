@@ -1,135 +1,75 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card from './card';
-import cardImageBg1 from '../assets/images/Image.png';
-import cardImageBg2 from '../assets/images/Image-2.png';
-import cardImageBg3 from '../assets/images/Image-3.png';
-import cardImageBg4 from '../assets/images/Image-4.png';
-import cardImageBg5 from '../assets/images/Image-5.png';
-import cardImageBg6 from '../assets/images/Image-6.png';
-import cardImageBg7 from '../assets/images/Image-7.png';
-import cardImageBg8 from '../assets/images/Image-8.png';
-import cardImageBg9 from '../assets/images/Image-9.png';
+import { useProperty } from '../contexts/PropertyContext';
+import { useRouter } from 'next/router';
 
-const HomeCardComponent = () => {
+// Tab components now use real property data
+const PropertyCardComponent = ({ propertyType = null }) => {
+  // Use the useProperty hook instead of direct context
+  const { dbProperties, loading, fetchPropertiesByType, error } = useProperty();
+  const router = useRouter();
+  
+  // Add console logs to debug
+  useEffect(() => {
+    console.log('PropertyCardComponent mounting with type:', propertyType);
+    
+    // Pass the property type to fetch only that type
+    if (propertyType) {
+      fetchPropertiesByType(propertyType);
+    } else {
+      fetchPropertiesByType();
+    }
+  }, [fetchPropertiesByType, propertyType]);
+
+  // Log what we got back
+  useEffect(() => {
+    console.log('Current dbProperties:', dbProperties);
+    console.log('Loading state:', loading);
+    console.log('Error state:', error);
+  }, [dbProperties, loading, error]);
+
+  // Handle property click to navigate to detail page
+  const handlePropertyClick = (property) => {
+    router.push(`/property/${property._id}`);
+  };
+
+  if (loading) {
+    return <div className="text-center p-10">Loading properties...</div>;
+  }
+
+  if (dbProperties.length === 0) {
+    return <div className="text-center p-10">No {propertyType || 'properties'} found.</div>;
+  }
+
   return (
-    <div className="flex flex-col sm:grid md:grid-cols-2 xl:grid-cols-3 gap-5 m-5 p-5 ">
-      <Card
-        imageSrc={cardImageBg1}
-        title="Modern Glass House"
-        price="$ 1,625,000"
-      />
-      <Card
-        imageSrc={cardImageBg2}
-        title="Modern Glass House"
-        price="$ 1,625,000"
-      />
-      <Card
-        imageSrc={cardImageBg3}
-        title="Modern Glass House"
-        price="$ 1,625,000"
-      />
-      <Card
-        imageSrc={cardImageBg4}
-        title="Modern Glass House"
-        price="$ 1,625,000"
-      />
-      <Card
-        imageSrc={cardImageBg5}
-        title="Modern Glass House"
-        price="$ 1,625,000"
-      />
-      <Card
-        imageSrc={cardImageBg6}
-        title="Modern Glass House"
-        price="$ 1,625,000"
-      />
-      <Card
-        imageSrc={cardImageBg7}
-        title="Modern Glass House"
-        price="$ 1,625,000"
-      />
-      <Card
-        imageSrc={cardImageBg8}
-        title="Modern Glass House"
-        price="$ 1,625,000"
-      />
-      <Card
-        imageSrc={cardImageBg9}
-        title="Modern Glass House"
-        price="$ 1,625,000"
-      />
+    <div className="flex flex-col sm:grid md:grid-cols-2 xl:grid-cols-3 gap-5 m-5 p-5">
+      {dbProperties.map((property) => (
+        <Card 
+          key={property._id} 
+          property={property} 
+          onClick={handlePropertyClick}
+        />
+      ))}
     </div>
   );
 };
 
-const ApartmentCardComponent = () => {
-  return (
-    <div className="flex flex-col sm:grid md:grid-cols-2 xl:grid-cols-3 gap-5 m-5 p-5  ">
-      <Card
-        imageSrc={cardImageBg4}
-        title="Modern Glass House"
-        price="$ 2,500,000"
-      />
-      <Card
-        imageSrc={cardImageBg5}
-        title="Modern Glass House"
-        price="$ 2,500,000"
-      />
-      <Card
-        imageSrc={cardImageBg6}
-        title="Modern Glass House"
-        price="$ 2,500,000"
-      />
-      <Card
-        imageSrc={cardImageBg7}
-        title="Modern Glass House"
-        price="$ 2,500,000"
-      />
-      <Card
-        imageSrc={cardImageBg8}
-        title="Modern Glass House"
-        price="$ 2,500,000"
-      />
-      <Card
-        imageSrc={cardImageBg9}
-        title="Modern Glass House"
-        price="$ 2,500,000"
-      />
-
-      <Card
-        imageSrc={cardImageBg1}
-        title="Modern Glass House"
-        price="$ 2,500,000"
-      />
-      <Card
-        imageSrc={cardImageBg2}
-        title="Modern Glass House"
-        price="$ 2,500,000"
-      />
-      <Card
-        imageSrc={cardImageBg3}
-        title="Modern Glass House"
-        price="$ 2,500,000"
-      />
-    </div>
-  );
-};
-
+// Define tabs with propertyType values that EXACTLY match the database values
 const tabs = [
-  { label: 'Home', content: <HomeCardComponent /> },
-  { label: 'Apartment', content: <ApartmentCardComponent /> },
-  { label: 'Office', content: <HomeCardComponent /> },
-  { label: 'Warehouse', content: <ApartmentCardComponent /> },
-  { label: 'Parking', content: <HomeCardComponent /> },
-  { label: 'Commercial', content: <ApartmentCardComponent /> },
+  { label: 'Home', content: <PropertyCardComponent propertyType="Home" /> },
+  { label: 'Apartment', content: <PropertyCardComponent propertyType="Apartment" /> },
+  { label: 'Office', content: <PropertyCardComponent propertyType="Office" /> },
+  { label: 'Warehouse', content: <PropertyCardComponent propertyType="Warehouse" /> },
+  { label: 'Parking', content: <PropertyCardComponent propertyType="Parking" /> },
+  { label: 'Commercial', content: <PropertyCardComponent propertyType="Commercial" /> },
 ];
 
 const Tabs = () => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
 
   return (
-    <div className="flex flex-col justify-center items-center  ">
-      <div className="flex ">
+    <div className="flex flex-col justify-center items-center">
+      <div className="flex">
         {tabs.map((tab, idx) => (
           <button
             key={idx}
