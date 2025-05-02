@@ -1,0 +1,58 @@
+// Global cursor rules for the real-estate monorepo
+
+// Structure information
+This is a monorepo with a Next.js frontend and Express backend.
+- Frontend is located at `apps/frontend` using Next.js 14, React 18, and TailwindCSS
+- Backend is located at `apps/backend` using Express
+- Firebase is used for authentication
+- Mapbox is used for maps integration
+
+// Frontend development rules
+- Use tailwind for styling
+- Use React hooks and functional components
+- Avoid using inline styles
+- Prefer server components where possible
+- Use proper TypeScript types when adding new code
+
+// Backend development rules
+- Use Express middleware for common functionality
+- Follow RESTful API design principles
+- Implement proper error handling
+- Use environment variables for configuration
+- Add proper logging
+
+// Monorepo rules
+- Keep shared code in the packages directory
+- Use relative imports within each app
+- Follow the existing file structure
+- Always update both frontend and backend when API contracts change
+
+// Coding pattern preferences
+- Always prefer simple solutions
+- Avoid duplication of code whenever possible
+- Write code that takes into account different environments: dev, test, and prod
+- Only make changes that are requested or well understood
+- When fixing an issue, exhaust existing implementation options before introducing new patterns
+- Keep the codebase clean and organized
+- Avoid having files over 200-300 lines of code
+- Mocking data is only needed for tests, never for dev or prod
+- Never overwrite .env files without asking and confirming
+- Write thorough tests for all major functionality 
+# Coding pattern preferences
+
+– Always prefer simple solutions  
+– Avoid duplication of code whenever possible, which means checking for other areas of the codebase that might already have similar code and functionality  
+– Write code that takes into account the different environments: dev, test, and prod  
+– You are careful to only make changes that are requested or you are confident are well understood and related to the change being requested  
+– When fixing an issue or bug, do not introduce a new pattern or technology without first exhausting all options for the existing implementation. And if you finally do this, make sure to remove the old implementation afterwards so we don’t have duplicate logic.  
+– Keep the codebase very clean and organized  
+– Avoid writing scripts in files if possible, especially if the script is likely only to be run once  
+– Avoid having files over 200–300 lines of code. Refactor at that point.  
+– Mocking data is only needed for tests, never mock data for dev or prod  
+– Never add stubbing or fake data patterns to code that affects the dev or prod environments  
+<!-- – Never overwrite my .env file without first asking and confirming -->
+- Focus on the areas of code relevant to the task
+- Do not touch code that is unrelated to the task
+- Write thorough tests for all major functionality
+- Avoid making major changes to the patterns and architecture of how a feature works, after it has shown to work well, unless explicitly instructed
+- Always think about what other methods and areas of code might be affected by code changes

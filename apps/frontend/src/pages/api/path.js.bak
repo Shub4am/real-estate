@@ -1,0 +1,67 @@
+import { NextApiRequest, NextApiResponse } from 'next';
+
+const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:5001';
+
+export default async function handler(req, res) {
+  // Skip API proxy for non-API routes or when viewing the main site
+  // This allows access to the frontend pages without requiring the backend
+  if (req.url === '/' || !req.url.startsWith('/api/')) {
+    return res.status(404).json({ error: 'Not Found' });
+  }
+
+  // Get the path from the query
+  const { path } = req.query;
+  
+  // Build the backend URL
+  const url = `${BACKEND_URL}/api/${Array.isArray(path) ? path.join('/') : path}`;
+  
+  try {
+    // Get request headers, but remove host to avoid conflicts
+    const headers = { ...req.headers };
+    delete headers.host;
+    
+    // Forward the request to the backend
+    const backendRes = await fetch(url, {
+      method: req.method,
+      headers,
+      body: req.method !== 'GET' && req.method !== 'HEAD' ? JSON.stringify(req.body) : undefined,
+    });
+    
+    // Get the response data
+    const data = await backendRes.text();
+    
+    // Set the status code and headers
+    res.status(backendRes.status);
+    
+    // Set response headers
+    const responseHeaders = backendRes.headers;
+    responseHeaders.forEach((value, key) => {
+      res.setHeader(key, value);
+    });
+    
+    // Return the response data
+    try {
+      // Try to parse as JSON
+      const jsonData = JSON.parse(data);
+      res.json(jsonData);
+    } catch (e) {
+      // If not JSON, return as text
+      res.send(data);
+    }
+  } catch (error) {
+    // Provide a more specific error message depending on the error
+    console.error('Error proxying request to backend:', error);
+    
+    if (error.code === 'ECONNREFUSED') {
+      res.status(503).json({ 
+        error: 'Backend service unavailable',
+        message: 'The backend server is not running. Please start the backend server or disable the API proxy.'
+      });
+    } else {
+      res.status(500).json({ 
+        error: 'Failed to fetch from backend service',
+        message: error.message
+      });
+    }
+  }
+} 

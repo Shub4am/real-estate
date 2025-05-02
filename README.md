@@ -1,20 +1,59 @@
-### Constructor Nextjs App
+# Real Estate Monorepo
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a monorepo containing both the frontend and backend for the real estate application.
 
-## About the Project 💻
+## Structure
 
-A real Estate investment website. The website provides an easy-to-use interface for viewing properties for rent or purchase. The website is mobile-responsive and easy to navigate. It shows property listings and uses tabs for different types of properties. User can also request additional information about the properties by using the contact form. It also has dark mode functionality.
+- `apps/frontend`: Next.js frontend application
+- `apps/backend`: Express backend API
+- `packages/ui`: Shared UI components (if needed)
 
-### Tools ⚒️
+## Getting Started
 
-* Nextjs
-* Tailwind Css for responsiveness
-* Using React-hook-form and yup for form validation
-* Deployed on Vercel.
+### Install Dependencies
 
+```bash
+npm install
+```
 
-### Website Screenshot 📸
+### Development
 
+To run both frontend and backend in development mode:
 
-![realestate](https://user-images.githubusercontent.com/43783336/230642046-cfd13de3-c5e2-4f9a-94de-6ca455f67972.png)
+```bash
+npm run dev
+```
+
+To run only the frontend:
+
+```bash
+cd apps/frontend
+npm run dev
+```
+
+To run only the backend:
+
+```bash
+cd apps/backend
+npm run dev
+```
+
+### Building
+
+```bash
+npm run build
+```
+
+### Production
+
+```bash
+npm run start
+```
+
+## Technologies
+
+- Frontend: Next.js, React, TailwindCSS
+- Backend: Express
+- Authentication: Firebase Auth
+- Maps: Mapbox
+- Database: MongoDB (planned) 
