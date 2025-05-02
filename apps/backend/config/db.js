@@ -9,16 +9,10 @@ if (!MONGODB_URI) {
   process.exit(1);
 }
 
-// MongoDB connection options
-const options = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-};
-
 // Connect to MongoDB
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(MONGODB_URI, options);
+    const conn = await mongoose.connect(MONGODB_URI);
     console.log(`MongoDB connected: ${conn.connection.host}`);
     return conn;
   } catch (error) {
