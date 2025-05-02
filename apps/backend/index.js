@@ -3,15 +3,22 @@ const express = require('express');
 const cors = require('cors');
 const { initializeApp, cert } = require('firebase-admin/app');
 const { getAuth } = require('firebase-admin/auth');
+const connectDB = require('./config/db');
 
 // Routes
 const mapboxRoutes = require('./routes/mapbox');
 const authRoutes = require('./routes/auth');
+const propertyRoutes = require('./routes/properties');
 
 // Initialize Express
 const app = express();
 const PORT = process.env.PORT || 5001;
 const isDevelopment = process.env.NODE_ENV === 'development';
+
+// Connect to MongoDB
+connectDB()
+  .then(() => console.log('MongoDB connection initialized'))
+  .catch(err => console.error('MongoDB connection error:', err));
 
 // Middleware
 app.use(cors());
@@ -66,16 +73,26 @@ const authMiddleware = async (req, res, next) => {
 // In development, don't require authentication for Mapbox routes
 if (isDevelopment) {
   app.use('/api/mapbox', mapboxRoutes);
-  console.log('Mapbox routes accessible without authentication in development mode');
+  app.use('/api/properties', propertyRoutes);
+  console.log('API routes accessible without authentication in development mode');
 } else {
   app.use('/api/mapbox', authMiddleware, mapboxRoutes);
+  app.use('/api/properties', authMiddleware, propertyRoutes);
 }
 
 app.use('/api/auth', authRoutes);
 
 // Health check route
 app.get('/api/health', (req, res) => {
-  res.status(200).json({ status: 'ok', timestamp: new Date(), mode: isDevelopment ? 'development' : 'production' });
+  res.status(200).json({ 
+    status: 'ok', 
+    timestamp: new Date(), 
+    mode: isDevelopment ? 'development' : 'production',
+    services: {
+      mongodb: 'connected',
+      mapbox: process.env.MAPBOX_API_KEY ? 'configured' : 'missing'
+    }
+  });
 });
 
 // Protected route example

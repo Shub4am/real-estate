@@ -1,0 +1,113 @@
+# REAL ESTATE MAPBOX INTEGRATION PLAN
+
+## Data Architecture with MongoDB
+
+1. **MongoDB Schema Design**:
+   - Create a `properties` collection in MongoDB Atlas
+   - Property document structure:
+     ```
+     {
+       _id: ObjectId,
+       title: String,
+       price: Number,
+       propertyType: String, // "Home", "Apartment", etc.
+       status: String, // "For Sale", "For Rent", etc.
+       address: {
+         full: String,
+         street: String,
+         city: String,
+         state: String,
+         zip: String,
+         country: String
+       },
+       location: {
+         type: "Point",
+         coordinates: [longitude, latitude] // GeoJSON format for geospatial queries
+       },
+       details: {
+         beds: Number,
+         baths: Number,
+         sqft: Number,
+         yearBuilt: Number
+       },
+       features: [String],
+       images: [String],
+       description: String,
+       createdAt: Date,
+       updatedAt: Date
+     }
+     ```
+   - Create geospatial indexes for location-based queries
+
+2. **Mapbox API Security**:
+   - Public token only for client-side map initialization
+   - Restricted API token for server-side requests
+   - All geocoding and advanced mapping features proxied through backend
+
+## Backend Development Flow
+
+1. **MongoDB Integration**:
+   - Set up MongoDB connection with Atlas
+   - Create mongoose models for property schema
+   - Build API endpoints for CRUD operations
+
+2. **Mapbox Backend Services**:
+   - Secure storage for Mapbox API tokens in environment variables
+   - Enhance existing `/api/mapbox` routes with more functionality
+   - Implement geocoding/reverse geocoding with result caching
+   - Add spatial queries (properties within radius, etc.)
+
+## Frontend Implementation
+
+1. **Property Cards Refactor**:
+   - Update Card component to accept complete property data
+   - Add click handler for map modal display
+   - Implement lazy-loading of images
+
+2. **Modal & Map Components**:
+   - Create responsive property detail modal
+   - Build map component with:
+     - Property marker
+     - Interactive controls
+     - Neighborhood visualization
+     - Street view integration (if needed)
+
+3. **Search & Filter Components**:
+   - Location-based search
+   - Property type filters (matching tabs)
+   - Price range filters
+   - Feature filters (beds, baths, etc.)
+
+## Implementation Sequence
+
+1. **Phase 1 - Data Foundation**:
+   - Set up property database schema in MongoDB Atlas
+   - Migrate existing mock data to database
+   - Create backend API endpoints
+
+2. **Phase 2 - Map Services**:
+   - Implement secure map API endpoints
+   - Add geocoding and caching layer
+   - Test with sample properties
+
+3. **Phase 3 - Frontend Components**:
+   - Update property cards to use real data
+   - Build map modal component
+   - Implement detail view
+
+4. **Phase 4 - Search & Filter**:
+   - Add search functionality
+   - Implement filtering options
+   - Connect to backend APIs
+
+## Security Considerations
+
+1. **Token Management**:
+   - Public Mapbox token: Used only for map rendering on frontend
+   - Server-side Mapbox token: Higher access, kept secure in environment variables
+   - Implement token restrictions based on HTTP referrers in Mapbox dashboard
+
+2. **API Protection**:
+   - Maintain authentication middleware for backend routes
+   - Consider rate limiting for Mapbox proxy endpoints
+   - Implement proper error handling for all API calls 

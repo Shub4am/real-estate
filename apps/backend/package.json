@@ -4,21 +4,23 @@
   "description": "Express backend with Firebase Auth and Mapbox integration",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "node --watch index.js",
+    "dev:watch-all": "node --watch-path=./ index.js",
     "start": "node index.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "seed": "node scripts/seedProperties.js"
   },
   "dependencies": {
     "axios": "^1.6.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.5.0",
     "express": "^4.18.2",
     "firebase-admin": "^11.11.1",
-    "mongodb": "^6.3.0",
-    "mongoose": "^8.0.3"
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.14.1"
   },
   "devDependencies": {
     "eslint": "^8.55.0",
     "nodemon": "^3.0.2"
   }
-} 
+}
